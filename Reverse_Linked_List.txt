@@ -1,0 +1,74 @@
+Reverses a single list.
+
+public class Node 
+{
+Node next;
+int value;
+}
+
+public Node reverse(Node head)
+{
+	if (head == null || head.next == null)
+
+	return head;
+
+	Node x1 = head;
+	Node x2 = x1.next;
+
+	head.next = null;
+	while(x1!=null && x2!=null)
+	{
+		Node t = x2.next;
+		x2.next = x1;
+		x1=x2;
+		x2=t;
+	}
+
+	return x1;
+}
+
+Complexity : O(n)
+
+JUnit tests:
+
+import org.junit.Before;
+import org.junit.Test;
+
+public Class reverseTest
+{
+	private reverseTest testClass;
+	private LinkedList list;
+
+	@Before	
+	public void setUp()
+	{
+	testClass = new reverse();
+	list = new LinkedList();
+	init();
+	}
+
+	@Test
+	 public void testName() {
+
+        testClass.reverseLinkedList(list);
+
+        Node x1 = list.head;
+        while (x1 != null) {
+
+            System.out.print(x1.data + " --> ");
+            x1 = x1.next;
+        }
+    }
+
+    private void init() {
+
+        list.insert(1);
+        list.insert(2);
+        list.insert(3);
+        list.insert(4);
+        list.insert(5);
+        list.insert(6);
+        list.insert(7);
+        list.insert(8);
+}
+}
