@@ -1,0 +1,19 @@
+public class SetProxyFactory {
+ 
+    public static Set getSetProxy(final Set s) {
+        return (Set) Proxy.newProxyInstance
+          (s.getClass().getClassLoader(),
+                new Class[] { Set.class },
+                new InvocationHandler() {
+                    public Object invoke(Object proxy, Method method, 
+                      Object[] args) throws Throwable {
+                        return method.invoke(s, args);
+                    }
+                });
+    }
+}
+
+Explanation:
+The above class has one static factory method getSetProxy(), which returns 
+a dynamic proxy implementing Set. The proxy returned by SetProxyFactory 
+dispatches the method to the Set instance passed into factory method. 
