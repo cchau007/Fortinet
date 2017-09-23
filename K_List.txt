@@ -1,0 +1,31 @@
+public boolean separate(List<Integer> list , int k)
+{
+	if (K==1)
+		return true;
+	
+	if(N<K)
+		return false;
+	
+	int sum = 0;
+	for( int i=0; i<N ; i++)
+		sum +=list[i];
+	if (sum % k !=0)
+		return false;
+		
+	int subset = sum/k;
+	int subsetSum[k];
+	bool taken[N];
+	
+	for( inti=0 ; i<k ; i++)
+		subsetSum[i] = 0;
+	for( int i=0; i<N ; i++)
+		taken[i] = false;
+	
+	subsetSum[0]=list(N-1);
+	taken[N-1]= true;
+	
+	return separate(List<Integer> list , int k);
+}
+
+	
+	}
