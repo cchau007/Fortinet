@@ -1,0 +1,28 @@
+<properties>
+  <project.mysql.connector.version>5.1.30</project.mysql.connector.version>
+  <project.hibernate.version>5.2.2.Final</project.hibernate.version>
+  <project.spring.orm.version>4.3.3.RELEASE</project.spring.orm.version>
+  <project.spring.data.jpa.version>1.10.3.RELEASE</project.spring.data.jpa.version>
+</properties>
+
+
+<dependency>
+   <groupId>mysql</groupId>
+   <artifactId>mysql-connector-java</artifactId>
+   <version>${project.mysql.connector.version}</version>
+</dependency>
+<dependency>
+   <groupId>org.hibernate</groupId>
+   <artifactId>hibernate-entitymanager</artifactId>
+   <version>${project.hibernate.version}</version>
+</dependency>
+<dependency>
+   <groupId>org.springframework.data</groupId>
+   <artifactId>spring-data-jpa</artifactId>
+   <version>${project.spring.data.jpa.version}</version>
+</dependency>
+<dependency>
+   <groupId>org.springframework</groupId>
+   <artifactId>spring-orm</artifactId>
+   <version>${project.spring.orm.version}</version>
+</dependency>
